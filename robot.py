@@ -16,6 +16,6 @@ class Robot:
         delta_x = avg_robot_x - my_x
         delta_y = avg_robot_y - my_y
         if abs(delta_x) > abs(delta_y):
-            return ['move', (1 if delta_x > 0 else -1 ,0)]
+            return ['move', (my_x + (1 if delta_x > 0 else -1 ), my_y)]
         else:
-            return ['move', (0, 1 if delta_y > 0 else -1)]
+            return ['move', (my_x, my_y + (1 if delta_y > 0 else -1))]
